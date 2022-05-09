@@ -29,6 +29,13 @@ public class PessoaServiceImpl implements PessoaService{
 				.collect(Collectors.toList());
 	}
 	
+	public List<PessoaDTO> filtrarPessoas(String filtro){
+		return pessoaRepository.buscarPessoasPorNomeCpf(filtro)
+				.stream()
+				.map(p-> new PessoaDTO(p))
+				.collect(Collectors.toList());
+	}
+	
 	public PessoaDTO atualizar(PessoaDTO pessoaDTO) {
 		Optional<Pessoa> pessoa = pessoaRepository.findById(pessoaDTO.getId());
 		if(pessoa.isPresent()) {

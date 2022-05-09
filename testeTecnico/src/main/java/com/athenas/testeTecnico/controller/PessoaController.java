@@ -32,6 +32,11 @@ public class PessoaController {
 		return pessoaService.obterTodasPessoas();
 	}
 	
+	@GetMapping("/filtro")
+	public List<PessoaDTO> filtrarPessoas(@RequestParam(value="filtro") String filtro){
+		return pessoaService.filtrarPessoas(filtro);
+	}
+	
 	@PutMapping
 	public PessoaDTO atualizar(@RequestBody PessoaDTO pessoaDTO) {
 		return pessoaService.atualizar(pessoaDTO);

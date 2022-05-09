@@ -13,6 +13,8 @@ public interface PessoaService {
 	
 	public List<PessoaDTO> obterTodasPessoas();
 	
+	public List<PessoaDTO> filtrarPessoas(String filtro);
+	
 	public PessoaDTO atualizar(PessoaDTO pessoaDTO);
 	
 	public void deletar(Long pessoaId);
